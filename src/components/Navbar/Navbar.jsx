@@ -27,7 +27,7 @@ const Navbar = () => {
                     <img src={search} alt="search" width="18" className="search-icon" />
                 </form>
                 {User === null ?
-                    <Link to='/Auth' className='nav-item nav-links'> Log in
+                    <Link to='/Auth' className='nav-item nav-links'>Log in
                     </Link> :
                     <><Avatar backgroundColor='#009dff' px='10px' py='7px' borderRadius='50%' color='white'
                     >

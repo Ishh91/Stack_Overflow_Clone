@@ -5,7 +5,7 @@ import LeftSidebar from "../../components/LeftSidebar/LeftSidebar";
 import RightSidebar from "../../components/RightSidebar/RightSidebar";
 import HomeMainbar from "../../components/HomeMainbar/HomeMainbar";
 
-const Home = ({ slideIn, handleSlideIn }) => {
+const Questions = ({ slideIn, handleSlideIn }) => {
   return (
     <div className="home-container-1">
       <LeftSidebar slideIn={slideIn} handleSlideIn={handleSlideIn} />
@@ -17,4 +17,4 @@ const Home = ({ slideIn, handleSlideIn }) => {
   );
 };
 
-export default Home;
+export default Questions;
