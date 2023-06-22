@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import AskQuestion from '../../Pages/AskQuestion/AskQuestion';
 import './HomeMainbar.css'
 import QuestionList from "./QuestionList";
 const HomeMainbar = () => {
@@ -18,36 +17,9 @@ const HomeMainbar = () => {
       navigate("/AskQuestion");
     }
   };
-  var questionsList = [{
-    _id: 1,
-    votes: 3,
-    questionTitle: "What is a function?",
-    noOfAnswers: 2,
-    questionBody: "It meant to be",
-    questionTags: ["java", "node js", "react js",],
-    userPosted: "mano",
-    askedOn: "Jan 1 2022"
-  },
-  {
-    _id: 2,
-    votes: 0,
-    questionTitle: "What is a function?",
-    noOfAnswers: 0,
-    questionBody: "It meant to be",
-    questionTags: ["javascript", "R", "python"],
-    userPosted: "mano",
-    askedOn: "feb 1 2023"
-  },
-  {
-    _id: 3,
-    votes: 1,
-    noOfAnswers: 0,
-    questionBody: "It meant to be",
-    questionTitle: "What is a function?",
-    questionTags: ["javascript", "R", "python"],
-    userPosted: "mano",
-    askedOn: "jan 1 2021"
-  }]
+
+  const questionsList = useSelector((state) => state.questionReducer);
+
   return (
     <div className='main-bar'>
       <div className='main-bar-header'>
@@ -61,13 +33,13 @@ const HomeMainbar = () => {
       </div>
       <div>
         {
-          questionsList === null ?
+          questionsList.data === null ?
             <h1>Loading....</h1> :
             <>
               <p>
-                { questionsList.length } questions
+                {questionsList.data.length} questions
               </p>
-               <QuestionList questionsList={questionsList}/>
+              <QuestionList questionsList={questionsList.data} />
             </>
         }
       </div>
