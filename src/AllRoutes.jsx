@@ -19,7 +19,7 @@ const AllRoutes = ({ slideIn, handleSlideIn }) => {
       <Route path='/Questions/:id' element={<DisplayQuestion/>}/>
       <Route
         path="/Tags"
-        element={<Tags slideIn={slideIn} handleSlideIn={handleSlideIn} />}
+        element={<Tags/>}
       />
     </Routes>
   )

@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import authReducer from "./auth";
-import questionsReducer from "./questions";
-import currentUserReducer from "./currentUser";
+import currentUserReducer from "./currentUser"
+import questionReducer from "./questions";
 export default combineReducers({
     authReducer,
     currentUserReducer,
-    questionsReducer,
+    questionReducer,
   });

@@ -9,9 +9,6 @@ import AboutAuth from "./AboutAuth";
 const Auth = () => {
     const handleSwitch = () => {
         setIsSignup(!isSignup);
-        setName("");
-        setEmail("");
-        setPassword("");
     };
     const dispatch = useDispatch()
     const navigate = useNavigate();
@@ -19,7 +16,7 @@ const Auth = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!email && !password) {
@@ -27,13 +24,12 @@ const Auth = () => {
         }
         if (isSignup) {
             if (!name) {
-              alert("Enter a name to continue");
+                alert("Enter a name to continue");
             }
             dispatch(signup({ name, email, password }, navigate));
-          } else {
+        } else {
             dispatch(login({ email, password }, navigate));
-          }
-
+        }
     };
     return (
         <section className="auth-section">
