@@ -80,9 +80,7 @@ const AskQuestion = () => {
               <input
                 type="text"
                 id="ask-ques-tags"
-                onChange={(e) => {
-                  setQuestionTags(e.target.value.split(""));
-                }}
+                onChange={(e) => setQuestionTags(e.target.value.split(" "))}
                 placeholder="e.g. (xml typescript wordpress)"
               />
             </label>

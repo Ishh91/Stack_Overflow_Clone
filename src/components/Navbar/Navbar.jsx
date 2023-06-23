@@ -22,7 +22,7 @@ const Navbar = () => {
         if(token){
             const decodedToken = decode(token)
             if(decodedToken.exp * 1000 < new Date().getTime()){
-                handleLogout()
+                handleLogout();
             }
         }
         dispatch(setCurrentUser(JSON.parse(localStorage.getItem("Profile"))))
